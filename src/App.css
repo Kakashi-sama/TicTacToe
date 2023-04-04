@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    animation: glow 3s ease-in-out infinite;
+    color: green;
   }
-}
+  
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px #00c3ff;
+    }
+    50% {
+      box-shadow: 0 0 40px #00c3ff;
+    }
+    100% {
+      box-shadow: 0 0 10px #00c3ff;
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+
+  .board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 224px;
+    height: 224px;
+    margin: 0 auto;
+    position: relative;
   }
-}
+  
+
+  
+  
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  
+  .board-row {
+    margin-bottom: -1px;
+  }
+  
+  /* Add styles for the individual squares */
+  .square {
+    background-color: #222;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 70px;
+    height: 70px;
+    margin-right: -2px;
+    margin-top: -2px;
+    padding: 0;
+    text-align: center;
+    width: 70px;
+    flex: 0 0 70px;
+  }
+  
+  .square:focus {
+    outline: none;
+    border: 2px solid #00c3ff;
+  }
+  
+  .square:hover {
+    background-color: #333;
+    cursor: pointer;
+  }
+  
+  .status {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .restart-button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .restart-button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Styles for the X and O symbols */
+.x:before {
+    content: 'X';
+  }
+  
+  .o:before {
+    content: 'O';
+  }
+
+  .winner {
+    color: #fff; /* Change the color code to your desired color */
+    background-color: #00f; /* Change the color code to your desired color */
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  button {
+    background-color: #118ab3;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 500ms ease;
+  }
+
+  button:hover {
+    background-color: transparent;
+    border: 2px solid green;
+  }
